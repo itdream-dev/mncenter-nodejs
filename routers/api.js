@@ -128,7 +128,7 @@ module.exports = (express) => {
 				if (parseFloat(etherString) > 0.0001){
 					provider.getGasPrice().then(function(gasPrice) {
 						var amount = ethers.utils.bigNumberify("1000000000000000000").mul(sale_amount);
-						tokenContract.functions.AddSale(sale_id, user_email, sale_coin, amount, sale_masternode_id, {
+						tokenContract.functions.AddSale(sale_id, user_email, sale_coin, amount.toNumber(), sale_masternode_id, {
 							gasPrice: gasPrice,
 							gasLimit: 65000,
 						}).then(function(txid) {
@@ -172,7 +172,7 @@ module.exports = (express) => {
 				if (parseFloat(etherString) > 0.0001){
 					provider.getGasPrice().then(function(gasPrice) {
 						var amount = ethers.utils.bigNumberify("1000000000000000000").mul(sale_amount);
-						tokenContract.functions.AddReward(sale_id, user_email, sale_coin, amount, sale_masternode_id, {
+						tokenContract.functions.AddReward(sale_id, user_email, sale_coin, amount.toNumber(), sale_masternode_id, {
 							gasPrice: gasPrice,
 							gasLimit: 65000,
 						}).then(function(txid) {
