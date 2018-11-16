@@ -131,7 +131,7 @@ module.exports = (express) => {
 						amount = ethers.utils.bigNumberify(amount.toString());
 						tokenContract.functions.AddSale(sale_id, user_email, sale_coin, amount, sale_masternode_id, {
 							gasPrice: gasPrice,
-							gasLimit: 250000,
+							gasLimit: 450000,
 						}).then(function(txid) {
 							res.jsonp({
 								status: 'success',
@@ -176,7 +176,7 @@ module.exports = (express) => {
 						amount = ethers.utils.bigNumberify(amount.toString());
 						tokenContract.functions.AddReward(sale_id, user_email, sale_coin, amount, sale_masternode_id, {
 							gasPrice: gasPrice,
-							gasLimit: 250000,
+							gasLimit: 450000,
 						}).then(function(txid) {
 							res.jsonp({
 								status: 'success',
